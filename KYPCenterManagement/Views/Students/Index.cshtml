@@ -1,0 +1,114 @@
+﻿@model IEnumerable<KYPCenterManagement.Models.Student>
+@{
+    ViewBag.Title = "Student";
+}
+
+<h2>Student Details</h2>
+
+<div>
+    @Html.ActionLink("Create New", "Create")
+    <br />
+    <br />
+    <form class="form-inline" action="/Students/Index">
+        <lable for="Search">Search</lable>
+        <input type="text" class="form-control" name="search" id="search" placeholder="Student Name" value="@ViewBag.search" />
+        <button class="btn btn-primary">Go</button>
+    </form>
+</div>
+
+<br />
+<div class="border">
+    <table class="table table-hover table-sm">
+        <tr>
+            <th>
+                @Html.Label("Photo")
+            </th>
+            <th>
+                @Html.Label("Student Name")
+            </th>
+            <th>
+                @Html.Label("Paid Amount")
+            </th>
+            <th>
+                @Html.Label("Due Amount")
+            </th>
+            <th>
+                @Html.Label("Batch Name")
+            </th>
+            <th>
+                @Html.Label("Center Name")
+            </th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@Url.Content(item.FilePath)" alt="Image" height="50" width="50" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaidAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Batch.BatchName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Center.CenterName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="15">
+                @{
+                    int prevPageNo = ViewBag.PageNo - 1;
+                    if (prevPageNo <= 0)
+                    {
+                        prevPageNo = 1;
+                    }
+                    int nextPageNo = ViewBag.NoOfPages;
+                    if (nextPageNo >= ViewBag.NoOfPages)
+                    {
+                        nextPageNo = ViewBag.NoOfPages;
+                    }
+                }
+
+                <ul class="pagination justify-content-end">
+                    <li class="page-item">
+                        <a class="page-link" href="/students/index?PageNo=@prevPageNo">Prev</a>
+                    </li>
+                    @for (int i = 0; i < @ViewBag.NoOfPages; i++)
+                    {
+                        if (i + 1 == ViewBag.PageNo)
+                        {
+                            <li class="page-item active">
+                                <a class="page-link" href="/students/index?PageNo=@(i+1)">@(i+1)</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="/students/index?PageNo=@(i+1)">@(i+1)</a>
+                            </li>
+                        }
+                    }
+                    <li class="page-item">
+                        <a class="page-link" href="/students/index?PageNo=@nextPageNo">Next</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+

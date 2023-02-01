@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e08195f0b9054eb9912370ce6a3e87ad" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="KYPCenterManagementModel.Batch" Width="1.5" PointX="5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KYPCenterManagementModel.Center" Width="1.5" PointX="2.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KYPCenterManagementModel.Payment" Width="1.5" PointX="5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KYPCenterManagementModel.Role" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KYPCenterManagementModel.Student" Width="1.5" PointX="7.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="KYPCenterManagementModel.UserRolesMapping" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KYPCenterManagementModel.User" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="KYPCenterManagementModel.FK__Batch__CenterID__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="KYPCenterManagementModel.FK__Student__BatchID__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="KYPCenterManagementModel.FK__Payment__CenterI__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="KYPCenterManagementModel.FK__Student__CenterI__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="KYPCenterManagementModel.FK__UserRoles__RoleI__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="KYPCenterManagementModel.FK__UserRoles__RoleI__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="KYPCenterManagementModel.FK__UserRoles__UserI__29572725" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

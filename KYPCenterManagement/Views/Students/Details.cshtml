@@ -1,0 +1,127 @@
+﻿@model KYPCenterManagement.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.StudentName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentGender)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.StudentGender)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentAge)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.StudentAge)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentAddress)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.StudentAddress)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MobileNo)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.MobileNo)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AadharNo)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.AadharNo)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistationNo)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.RegistationNo)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FatherName)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.FatherName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PaidAmount)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.PaidAmount)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DueAmount)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.DueAmount)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Batch.BatchName)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.Batch.BatchName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Center.CenterName)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.Center.CenterName)
+            </td>
+        </tr>
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

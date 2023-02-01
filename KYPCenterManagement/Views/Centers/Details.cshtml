@@ -1,0 +1,26 @@
+﻿@model KYPCenterManagement.Models.Center
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+    <h4>Center</h4>
+    <hr />
+    <table class="table table-bordered">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.CenterName)</th>
+            <td>@Html.DisplayFor(model => model.CenterName)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.CenterAddress)</th>
+            <td>@Html.DisplayFor(model => model.CenterAddress)</td>
+        </tr>
+    </table>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

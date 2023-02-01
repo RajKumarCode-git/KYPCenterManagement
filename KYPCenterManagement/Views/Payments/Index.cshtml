@@ -1,0 +1,50 @@
+﻿@model IEnumerable<KYPCenterManagement.Models.Payment>
+
+@{
+    ViewBag.Title = "Payment";
+}
+
+<h2>Payment Details</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Center Name")
+        </th>
+        <th>
+            @Html.Label("Total Student")
+        </th>
+        <th>
+            @Html.Label("Total Paid Amount")
+        </th>
+        <th>
+            @Html.Label("Total Due Amount")
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Center.CenterName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalStudent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPaidAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalDueAmount)
+        </td>
+
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>*@
+    </tr>
+}
+
+</table>

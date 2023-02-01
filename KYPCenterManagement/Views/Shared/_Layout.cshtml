@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - KYP Center Management</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    @*<style>
+            .dropdown-menu {
+                min-width:132px;
+            }
+        </style>*@
+
+    <style>
+        .BoxInForm {
+            box-sizing: border-box;
+            width: 341px;
+            border-radius: 8px;
+            align-items: center;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+            padding: 34px;
+            margin-top: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        @Html.ActionLink("KYP Center Management", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <button class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <ul class="navbar-nav">
+                    <li>@Html.ActionLink("Centers", "Index", "Centers", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Batches", "Index", "Batches", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Students", "Index", "Students", new { area = "" }, new { @class = "nav-link" })</li>
+                    @if (User.IsInRole("Adminstrator"))
+                    {
+                        <li>@Html.ActionLink("Payments", "Index", "Payments", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Users", "Index", "Users", new { area = "" }, new { @class = "nav-link float-right" })</li>
+                        <li>@Html.ActionLink("Roles", "Index", "Roles", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("User Role Mapping", "Index", "UserRolesMappings", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
+
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link text-center text-uppercase" href="#"  role="button">
+                            Welcome @User.Identity.Name
+                        </a>
+                    </li>
+                    <li> @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            }
+            else
+            {
+                <ul class="navbar-nav">
+                    <li>
+                        @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })
+                    </li>
+                    <li>@Html.ActionLink("Login", "Login", "Home", new { @class = "nav-link" })</li>
+                </ul>
+            }
+
+        </div>
+    </div>
+
+
+    <div class="container body-content">
+        <div style="min-height:600px">
+            @RenderBody()
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Developed By Raj Kumar</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
